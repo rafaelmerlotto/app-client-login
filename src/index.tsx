@@ -2,11 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { AuthProvider } from './authentication/auth';
 
 
 ReactDOM.render(
-
-    <App />,
+     <React.StrictMode>
+     <AuthProvider>
+       <App />
+     </AuthProvider>
+   </React.StrictMode>,
 (document.getElementById('root'))
 );
 
