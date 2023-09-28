@@ -3,7 +3,7 @@ import { useAuth } from "./authentication/auth";
 import { Register } from "./pages/Register";
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
 import { LoginPage } from "./pages/Login";
-import Dashboard from "./pages/Home";
+import Home from "./pages/Home";
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
           <LoginPage />
         </Route>
         <PrivateRoute path="/">
-          <Dashboard />
+          <Home />
         </PrivateRoute>
       </Switch>
     </Router>

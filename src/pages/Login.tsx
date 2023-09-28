@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Redirect, Link } from 'react-router-dom';
 import { useAuth } from '../authentication/auth';
+import Nav from '../components/Nav';
 
 
 interface LoginData {
@@ -23,7 +24,8 @@ export const LoginPage = () => {
     return <Redirect to="/" />;
   }
   return (
-
+    <>
+    <Nav/>
     <div className="login">
       <form onSubmit={handleSubmit(onSubmit)}>
         <label>Email</label>
@@ -37,6 +39,8 @@ export const LoginPage = () => {
         <Link style={{ color: '#000', fontSize: 17, textDecoration: 'none' }} to="/register"> Register </Link>
       </form>
     </div>
+
+    </>
 
   );
 };

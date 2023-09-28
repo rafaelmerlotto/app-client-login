@@ -3,6 +3,7 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { authService } from "../services";
 import { Link, Redirect } from "react-router-dom";
 import { useAuth } from "../authentication/auth";
+import Nav from "../components/Nav";
 
 
 interface DataRegister {
@@ -33,25 +34,29 @@ export const Register = () => {
     }
 
     return (
+        <>
+            <Nav />
 
-        <div className="login">
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="login">
+                <form onSubmit={handleSubmit(onSubmit)}>
 
-                <label>Name</label>
-                <input type="name"  {...register('name')} />
+                    <label>Name</label>
+                    <input type="name"  {...register('name')} />
 
-                <label>Email</label>
-                <input type="email" {...register('email')} />
+                    <label>Email</label>
+                    <input type="email" {...register('email')} />
 
-                <label>Password</label>
-                <input type="password" {...register('password')} />
+                    <label>Password</label>
+                    <input type="password" {...register('password')} />
 
-                <button className="btn" type="submit">Register</button>
+                    <button className="btn" type="submit">Register</button>
 
-                <Link  style={{ color: '#000', fontSize: 17, textDecoration: 'none' }} to="/login"> Login </Link>
-            </form>
+                    <Link style={{ color: '#000', fontSize: 17, textDecoration: 'none' }} to="/login"> Login </Link>
+                </form>
 
-        </div>
+            </div>
+        </>
+
 
     );
 };
